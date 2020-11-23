@@ -18,7 +18,7 @@ class Meme extends Component {
       .then((response) => response.json())
       .then((response) => {
         const { memes } = response.data;
-        console.log(memes[0]);
+        //console.log(memes[0]);
         this.setState({ allMemeImgs: memes });
       });
   }
@@ -37,6 +37,8 @@ class Meme extends Component {
     const randMemeImg = this.state.allMemeImgs[randNum].url;
     //update state
     this.setState({ randomImg: randMemeImg });
+    //check in console
+    console.log(this.state.allMemeImgs[randNum]);
   }
 
   render() {
