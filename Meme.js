@@ -6,7 +6,7 @@ class Meme extends Component {
     this.state = {
       topText: "",
       bottomText: "",
-      randomImg: "",
+      randomImg: "http://i.imgflip.com/1bij.jpg",
       allMemeImgs: []
     };
     this.handleChange = this.handleChange.bind(this);
@@ -18,7 +18,7 @@ class Meme extends Component {
       .then((response) => response.json())
       .then((response) => {
         const { memes } = response.data;
-        //console.log(memes[0])
+        console.log(memes[0]);
         this.setState({ allMemeImgs: memes });
       });
   }
@@ -38,6 +38,7 @@ class Meme extends Component {
     //update state
     this.setState({ randomImg: randMemeImg });
   }
+
   render() {
     return (
       <div>
